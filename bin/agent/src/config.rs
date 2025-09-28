@@ -6,6 +6,7 @@ use strum_macros::{Display, EnumString};
 use tracing::instrument;
 
 const DEFAULT_LOG_LEVEL: slog::Level = slog::Level::Info;
+
 const DEFAULT_CDH_API_TIMEOUT: time::Duration = time::Duration::from_secs(50);
 
 const ERR_INVALID_LOG_LEVEL: &str = "invalid log level";

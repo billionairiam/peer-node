@@ -8,38 +8,33 @@ members = [
 ]
 
 [workspace.dependencies]
+anyhow = "1.0"
+arc-swap = "1.5.0"
 async-compression = "0.4.22"
 async-trait = "0.1.50"
-sha2 = "0.10.8"
+base64 = "0.22.1"
+bincode = "1.3.3"
+byteorder = "1.4.3"
+clap = { version = "4.5", features = ["derive"] }
+const_format = "0.2.34"
+futures = "0.3.30"
+jsonwebkey = "0.3"
+lazy_static = "1.3.0"
+libc = "0.2.94"
+log = "0.4.11"
 logging = { path = "crates/logging" }
-vsock-exporter = { path = "crates/vsock-exporter" }
+
+nix = { version = "0.26.4", features = ["fs"] }
+oci-client = "0.15"
 ocicrypt-rs = { git = "https://github.com/confidential-containers/guest-components", rev = "7f342e1a80828c9aceb3282fe58eda4e7051edc6", features = [
     "keywrap-jwe",
     "keywrap-keyprovider-ttrpc",
     "keywrap-keyprovider-grpc",
 ] }
 opentelemetry = { version = "0.14.0", features = ["rt-tokio-current-thread"] }
-anyhow = "1.0"
-byteorder = "1.4.3"
-bincode = "1.3.3"
-const_format = "0.2.34"
-strum_macros = "0.26.2"
-toml = "0.5.8"
-tracing = "0.1.41"
-libc = "0.2.94"
-futures = "0.3.30"
-strum = "0.26.2"
-tokio-vsock = "0.3.4"
-base64 = "0.22.1"
-clap = { version = "4.5", features = ["derive"] }
-oci-client = "0.15"
 serde = { version = "1.0", features = ["derive"] }
-thiserror = "2.0.16"
-walkdir = "2.5.0"
-jsonwebkey = "0.3"
-
-nix = { version = "0.26.4", features = ["fs"] }
 serde_json = "1.0.73"
+sha2 = "0.10.8"
 # slog:
 # - Dynamic keys required to allow HashMap keys to be slog::Serialized.
 # - The 'max_*' features allow changing the log level at runtime
@@ -49,18 +44,23 @@ slog = { version = "2.5.2", features = [
     "max_level_trace",
     "release_max_level_debug",
 ] }
-slog-json = "2.4.0"
-slog-term = "2.9.1"
 slog-async = "2.7.0"
-slog-scope = "4.4.0"
 slog-journald = "2.2.0"
-lazy_static = "1.3.0"
-arc-swap = "1.5.0"
-tokio = { version = "1.46.1", features = ["full"] }
+slog-json = "2.4.0"
+slog-scope = "4.4.0"
 slog-stdlog = "4.0.0"
+slog-term = "2.9.1"
+strum = "0.26.2"
+strum_macros = "0.26.2"
+thiserror = "2.0.16"
+tokio = { version = "1.46.1", features = ["full"] }
+tokio-vsock = "0.3.4"
+toml = "0.5.8"
+tracing = "0.1.41"
 tracing-opentelemetry = "0.13.0"
 tracing-subscriber = "0.2.18"
-log = "0.4.11"
+vsock-exporter = { path = "crates/vsock-exporter" }
+walkdir = "2.5.0"
 
 [profile.release]
 debug = true

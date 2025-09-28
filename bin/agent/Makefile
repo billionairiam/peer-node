@@ -7,10 +7,11 @@ TARGET = $(PROJECT_COMPONENT)
 COMMIT_NO := $(shell git rev-parse HEAD 2>/dev/null || true)
 COMMIT := $(if $(shell git status --porcelain --untracked-files=no 2>/dev/null || true),${COMMIT_NO}-dirty,${COMMIT_NO})
 COMMIT_MSG = $(if $(COMMIT),$(COMMIT),unknown)
+AGENT_PATH := node-agent
 
 export VERSION_COMMIT := $(if $(COMMIT),$(VERSION)-$(COMMIT),$(VERSION))
 
-include ../../util.mk
+include ../../utils.mk
 
 TARGET_PATH = target/$(TRIPLE)/$(BUILD_TYPE)/$(TARGET)
 
@@ -32,7 +33,8 @@ GENERATED_REPLACEMENTS= \
 	API_VERSION \
 	BINDIR \
 	COMMIT \
-	VERSION_COMMIT
+	VERSION_COMMIT \
+	AGENT_PATH
 GENERATED_FILES :=
 
 GENERATED_FILES += $(GENERATED_CODE)
@@ -131,4 +133,3 @@ codecov-html: check_tarpaulin
 	show-header \
 	show-summary \
 	vendor
-

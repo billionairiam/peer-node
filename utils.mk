@@ -38,7 +38,7 @@ test-$(2) : $(2)
 endef
 
 define make_component_rules
-$(eval $(call make_rules,src,$(1)))
+$(eval $(call make_rules,bin,$(1)))
 endef
 
 define make_all_rules
@@ -69,7 +69,7 @@ BUILD_TYPE ?= release
 HOST_ARCH = $(shell uname -m)
 ARCH ?= $(HOST_ARCH)
 
-LIBC ?= musl
+LIBC ?= gnu
 ifneq ($(LIBC),musl)
 	ifeq ($(LIBC),gnu)
 		override LIBC = gnu
