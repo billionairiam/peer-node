@@ -1,0 +1,18 @@
+[package]
+name = "logging"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde_json.workspace = true
+slog.workspace = true
+slog-json.workspace = true
+slog-term.workspace = true
+slog-async.workspace = true
+slog-scope.workspace = true
+slog-journald.workspace = true
+lazy_static.workspace = true
+arc-swap.workspace = true
+
+[dev-dependencies]
+tempfile = "3.19.1"

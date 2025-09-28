@@ -1,0 +1,36 @@
+[package]
+name = "node-agent"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-compression = { workspace = true, features = ["tokio", "gzip"] }
+anyhow.workspace = true
+base64 = "0.22"
+const_format.workspace = true
+lazy_static.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+strum_macros.workspace = true
+slog.workspace = true
+toml.workspace = true
+tracing.workspace = true
+clap.workspace = true
+tokio.workspace = true
+libc.workspace = true
+nix.workspace = true
+futures.workspace = true
+strum.workspace = true
+tokio-vsock.workspace = true
+logging.workspace = true
+slog-scope.workspace = true
+slog-stdlog.workspace = true
+vsock-exporter.workspace = true
+opentelemetry = { workspace = true, features = ["rt-tokio-current-thread"] }
+tracing-opentelemetry.workspace = true
+tracing-subscriber.workspace = true
+log.workspace = true
+sha2.workspace = true
+
+flate2 = { version = "1.0", features = ["zlib"] }
+ttrpc = { version = "0.8.6", features = ["async"], default-features = false }
